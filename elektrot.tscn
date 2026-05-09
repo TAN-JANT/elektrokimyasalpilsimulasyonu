@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://jdoksjj6jsvt"]
+
+[ext_resource type="Script" uid="uid://dtxr2bspw8bku" path="res://elektrot.gd" id="1_6ieru"]
+[ext_resource type="Texture2D" uid="uid://yw6g42mcsx5h" path="res://Nesneler.png" id="2_epmeb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iue0c"]
+size = Vector2(46, 149)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6btaa"]
+size = Vector2(49.5, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f73dn"]
+size = Vector2(49, 150)
+
+[node name="Elektrot" type="CharacterBody2D" groups=["Elektrot"]]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_6ieru")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_epmeb")
+hframes = 2
+vframes = 3
+frame = 3
+region_rect = Rect2(215, 165, 50, 150)
+
+[node name="UI" type="Area2D" parent="."]
+collision_layer = 2147483648
+collision_mask = 2147483648
+
+[node name="UI" type="CollisionShape2D" parent="UI"]
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_iue0c")
+
+[node name="Object_Interact" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="INTERACT1" type="CollisionShape2D" parent="Object_Interact"]
+position = Vector2(0.25, -55.5)
+shape = SubResource("RectangleShape2D_6btaa")
+
+[node name="INTERACT2" type="CollisionShape2D" parent="Object_Interact"]
+position = Vector2(0, 55)
+shape = SubResource("RectangleShape2D_6btaa")
+
+[node name="Elektrot" type="Label" parent="."]
+offset_left = -52.0
+offset_top = 68.0
+offset_right = -12.0
+offset_bottom = 91.0
+
+[node name="durum" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -125.333
+offset_right = 20.0
+offset_bottom = -102.333
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_f73dn")

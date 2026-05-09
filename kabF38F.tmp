@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhox4hhrbm66v"]
+
+[ext_resource type="Script" path="res://kablo.gd" id="1_c87vf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cptbi"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_entag"]
+radius = 20.0
+
+[node name="Kablo" type="Line2D" groups=["Kablo"]]
+script = ExtResource("1_c87vf")
+
+[node name="Uc1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Uc1"]
+shape = SubResource("CircleShape2D_cptbi")
+
+[node name="Uc2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Uc2"]
+shape = SubResource("CircleShape2D_entag")

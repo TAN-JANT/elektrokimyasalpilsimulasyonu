@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdu5hxfqmam2m"]
+
+[ext_resource type="Script" uid="uid://bk23hh6k84r3x" path="res://main.gd" id="1_wjqmx"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_wjqmx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+rotation = -0.261799
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_right = 106.0
+offset_bottom = 30.0
+text = "Beher ekle"
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+offset_top = 31.0
+offset_right = 106.0
+offset_bottom = 62.0
+text = "Tuz köprüsü ekle"
+
+[node name="Button3" type="Button" parent="CanvasLayer"]
+offset_top = 62.0
+offset_right = 139.0
+offset_bottom = 93.0
+text = "Elektrot ekle
+"
+
+[node name="Button6" type="Button" parent="CanvasLayer"]
+offset_top = 93.0
+offset_right = 219.0
+offset_bottom = 124.0
+text = "Simülasyonu başlat/durdur
+"
+
+[node name="Button4" type="Button" parent="CanvasLayer"]
+offset_left = 1.0
+offset_top = 126.0
+offset_right = 128.0
+offset_bottom = 171.0
+text = "Mod değiştir"
+
+[node name="Entities" type="Node2D" parent="."]
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="beher_ekle"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button4" to="." method="_on_button_4_pressed"]

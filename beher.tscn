@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://w8xsw6m5dpyj"]
+
+[ext_resource type="Texture2D" uid="uid://yw6g42mcsx5h" path="res://Nesneler.png" id="1_b0dj2"]
+[ext_resource type="Script" uid="uid://dsf1grl3ewtsd" path="res://beher.gd" id="1_tvy30"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6btaa"]
+size = Vector2(105, 68)
+
+[node name="Beher" type="CharacterBody2D" groups=["Beher"]]
+z_index = -1
+script = ExtResource("1_tvy30")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_b0dj2")
+region_enabled = true
+region_rect = Rect2(25, 15, 105, 135)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-52, -67, -53, 68, 53, 68, 53, -68, 43, -68, 42, 58, -42, 57, -42, -67)
+
+[node name="UI" type="Area2D" parent="."]
+collision_layer = 2147483648
+collision_mask = 2147483648
+
+[node name="UI" type="CollisionShape2D" parent="UI"]
+position = Vector2(-0.5, 34)
+shape = SubResource("RectangleShape2D_6btaa")
+
+[node name="Object_Interact" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="INTERACT" type="CollisionShape2D" parent="Object_Interact"]
+position = Vector2(-0.5, 34)
+shape = SubResource("RectangleShape2D_6btaa")
+
+[node name="Molarite" type="Label" parent="."]
+offset_left = -52.0
+offset_top = 91.0
+offset_right = -12.0
+offset_bottom = 114.0
+
+[node name="Cozelti" type="Label" parent="."]
+offset_left = -52.0
+offset_top = 68.0
+offset_right = -12.0
+offset_bottom = 91.0
